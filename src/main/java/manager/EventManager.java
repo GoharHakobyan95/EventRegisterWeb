@@ -12,7 +12,7 @@ import java.util.List;
 
 public class EventManager {
     private Connection connection = DBConnectionProvider.getInstance().getConnection();
-    private static   SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    private static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
     public void addEvent(Event event) {
         String sql = "Insert into event (name,place,is_online,price,event_type,event_date) Values(?,?,?,?,?,?)";
@@ -79,5 +79,31 @@ public class EventManager {
                 .eventDate(resultSet.getString("event_date") == null ? null : sdf.parse(resultSet.getString("event_date")))
                 .build();
 
+    }
+
+    public void removeEventById(int eventId) {
+        String sql = "Delete from event where id = " + eventId;
+        try {
+            Statement statement = connection.createStatement();
+            statement.executeUpdate(sql);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void editEvent(Event event) {
+        String sql = "UPDATE event set `name` = ?, place = ?,  is_online = ?, price = ?, event_type = ?, event_date = ? where id = ?";
+        try {
+            PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            ps.setString(1, event.getName());
+            ps.setString(2, event.getPlace());
+            ps.setBoolean(3, event.isOnline());
+            ps.setDouble(4, event.getPrice());
+            ps.setString(5, event.getType().name());
+            ps.setString(6, sdf.format(event.getEventDate()));
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }

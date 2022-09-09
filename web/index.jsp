@@ -14,7 +14,8 @@
 <br>
 <a href ="/events">Show All Events</a>
 <a href ="/events/add">Add event</a>
-<%--<a href ="/users">Show All Users</a>--%>
+<a href ="/users">Show All Users</a>
+<a href ="/users/add">Add user</a>
 <br>
 </body>
 </html>

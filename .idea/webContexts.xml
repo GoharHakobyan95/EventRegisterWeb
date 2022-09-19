@@ -3,8 +3,10 @@
   <component name="WebContextManager">
     <option name="state">
       <map>
+        <entry key="file://$PROJECT_DIR$/web/WEB-INF/addUser.jsp" value="file://$PROJECT_DIR$/web/WEB-INF" />
         <entry key="file://$PROJECT_DIR$/web/WEB-INF/editEvent.jsp" value="file://$PROJECT_DIR$/web/WEB-INF" />
         <entry key="file://$PROJECT_DIR$/web/WEB-INF/events.jsp" value="file://$PROJECT_DIR$/web/WEB-INF" />
+        <entry key="file://$PROJECT_DIR$/web/index.jsp" value="file://$PROJECT_DIR$/web" />
       </map>
     </option>
   </component>

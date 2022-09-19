@@ -21,7 +21,9 @@ Please input event's data!
     <br>
     Please choose event's type.<br>
     <select name="eventType">
-        <option value="CONFERENCE">CONFERENCE</option>
+        <option value="FILM">FILM</option>
+        <option value="SPORT">SPORT</option>
+        <option value="GAME">GAME</option>
         <option value="WEBINAR">WEBINAR</option>
     </select>
     <br>

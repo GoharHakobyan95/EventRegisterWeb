@@ -1,6 +1,8 @@
 package model;
 
 public enum EventType {
-    CONFERENCE,
-   WEBINAR
+    FILM,
+    SPORT,
+    GAME,
+    WEBINAR
 }

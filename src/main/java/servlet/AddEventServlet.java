@@ -28,8 +28,8 @@ public class AddEventServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String name = req.getParameter("name");
         String place = req.getParameter("place");
-        Boolean isOnline = Boolean.valueOf(req.getParameter("isOnline"));
-        Double price = Double.valueOf(req.getParameter("price"));
+        boolean isOnline = Boolean.valueOf(req.getParameter("isOnline"));
+        double price = Double.parseDouble(req.getParameter("price"));
         EventType eventType = EventType.valueOf(req.getParameter("eventType"));
         String eventDateStr = req.getParameter("eventDate");
 
@@ -46,7 +46,7 @@ public class AddEventServlet extends HttpServlet {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        eventManager.addEvent(event);
+        eventManager.add(event);
         resp.sendRedirect("/events");
     }
 }
